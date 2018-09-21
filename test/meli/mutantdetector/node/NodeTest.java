@@ -1,4 +1,4 @@
-package meli.mutantdetector.nitrogenbase;
+package meli.mutantdetector.node;
 
 import meli.mutantdetector.node.Node;
 import org.junit.Assert;
