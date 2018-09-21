@@ -7,11 +7,13 @@ public class Node {
 
     private static final int MAX_SEQ_LENGTH = 4;
 
-    private static final String UPPER_LEFT_KEY = "UL";
+    private static final String DIAGONAL_UPPER_LEFT_KEY = "UL";
     private static final String PREVIOUS_HORIZONTAL_KEY = "PH";
-    private static final String LOWER_LEFT_KEY = "LL";
+    private static final String DIAGONAL_LOWER_LEFT_KEY = "LL";
     private static final String POSTERIOR_VERTICAL_KEY = "PV";
-    private static final String LOWER_RIGHT_KEY = "LR";
+    private static final String DIAGONAL_LOWER_RIGHT_KEY = "LR";
+    private static final String POSTERIOR_HORIZONTAL_KEY = "PH";
+    private static final String DIAGONAL_UPPER_RIGHT_KEY = "UR";
 
     private final String _id;
     private final HashMap<String, Node> _childs;
@@ -46,7 +48,7 @@ public class Node {
     }
 
     public boolean analyzeDiagonalUpperLeft(int sequenceLength) {
-        return analyzeChilds(UPPER_LEFT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_UPPER_LEFT_KEY, sequenceLength);
     }
 
     public boolean analyzePreviousHorizontal(int sequenceLength) {
@@ -54,7 +56,7 @@ public class Node {
     }
 
     public boolean analyzeDiagonalLowerLeft(int sequenceLength) {
-        return analyzeChilds(LOWER_LEFT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_LOWER_LEFT_KEY, sequenceLength);
     }
 
     public boolean analyzePosteriorVertical(int sequenceLength) {
@@ -62,11 +64,19 @@ public class Node {
     }
     
     public boolean analyzeDiagonalLowerRight(int sequenceLength) {
-        return analyzeChilds(LOWER_RIGHT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_LOWER_RIGHT_KEY, sequenceLength);
+    }
+    
+    public boolean analyzePosteriorHorizontal(int sequenceLength) {
+        return analyzeChilds(POSTERIOR_HORIZONTAL_KEY, sequenceLength);
+    }
+    
+    public boolean analyzeDiagonalUpperRight(int sequenceLength) {
+        return analyzeChilds(DIAGONAL_UPPER_RIGHT_KEY, sequenceLength);
     }
 
     public void addDiagonalUpperLeft(final Node node) {
-        _childs.put(UPPER_LEFT_KEY, node);
+        _childs.put(DIAGONAL_UPPER_LEFT_KEY, node);
     }
 
     public void addPreviousHorizontal(final Node node) {
@@ -74,7 +84,7 @@ public class Node {
     }
 
     public void addDiagonalLowerLeft(final Node node) {
-        _childs.put(LOWER_LEFT_KEY, node);
+        _childs.put(DIAGONAL_LOWER_LEFT_KEY, node);
     }
 
     public void addPosteriorVertical(final Node node) {
@@ -82,7 +92,15 @@ public class Node {
     }
     
     public void addDiagonalLowerRight(final Node node) {
-        _childs.put(LOWER_RIGHT_KEY, node);
+        _childs.put(DIAGONAL_LOWER_RIGHT_KEY, node);
+    }
+    
+    public void addPosteriorHorizontal(final Node node) {
+        _childs.put(POSTERIOR_HORIZONTAL_KEY, node);
+    }
+    
+    public void addDiagonalUpperRight(final Node node) {
+        _childs.put(DIAGONAL_UPPER_RIGHT_KEY, node);
     }
 
 }

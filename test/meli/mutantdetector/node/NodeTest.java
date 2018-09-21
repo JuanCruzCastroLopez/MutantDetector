@@ -196,6 +196,82 @@ public class NodeTest {
         Assert.assertTrue(result);
     }
     
+    @Test
+    public void test_analyzePosteriorHorizontal_returnFalse_whenNodeIdIsLetterAandHisChildIdIsLetterT() {
+        final Node nodeA = new Node("A");
+        final Node nodeT = new Node("T");
+
+        nodeA.addPosteriorHorizontal(nodeT);
+
+        final boolean result = nodeA.analyzePosteriorHorizontal(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzePosteriorHorizontal_returnFalse_whenNodeDoesNotHaveChilds() {
+        final Node nodeA = new Node("A");
+
+        final boolean result = nodeA.analyzePosteriorHorizontal(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzePosteriorHorizontal_returnTrue_whenNodeHasThreeChildsWithTheSameLetter() {
+        final Node nodeA = new Node("A");
+
+        final Node node1 = new Node("A");
+        final Node node2 = new Node("A");
+        final Node node3 = new Node("A");
+
+        node2.addPosteriorHorizontal(node3);
+        node1.addPosteriorHorizontal(node2);
+        nodeA.addPosteriorHorizontal(node1);
+
+        final boolean result = nodeA.analyzePosteriorHorizontal(1);
+
+        Assert.assertTrue(result);
+    }
+    
+    @Test
+    public void test_analyzeDiagonalPosteriorRight_returnFalse_whenNodeIdIsLetterAandHisChildIdIsLetterT() {
+        final Node nodeA = new Node("A");
+        final Node nodeT = new Node("T");
+
+        nodeA.addDiagonalUpperRight(nodeT);
+
+        final boolean result = nodeA.analyzeDiagonalUpperRight(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzeDiagonalPosteriorRight_returnFalse_whenNodeDoesNotHaveChilds() {
+        final Node nodeA = new Node("A");
+
+        final boolean result = nodeA.analyzeDiagonalUpperRight(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzeDiagonalPosteriorRight_returnTrue_whenNodeHasThreeChildsWithTheSameLetter() {
+        final Node nodeA = new Node("A");
+
+        final Node node1 = new Node("A");
+        final Node node2 = new Node("A");
+        final Node node3 = new Node("A");
+
+        node2.addDiagonalUpperRight(node3);
+        node1.addDiagonalUpperRight(node2);
+        nodeA.addDiagonalUpperRight(node1);
+
+        final boolean result = nodeA.analyzeDiagonalUpperRight(1);
+
+        Assert.assertTrue(result);
+    }
+    
 
 
 }
