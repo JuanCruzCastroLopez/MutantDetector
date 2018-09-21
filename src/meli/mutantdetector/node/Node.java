@@ -14,6 +14,7 @@ public class Node {
     private static final String DIAGONAL_LOWER_RIGHT_KEY = "LR";
     private static final String POSTERIOR_HORIZONTAL_KEY = "PH";
     private static final String DIAGONAL_UPPER_RIGHT_KEY = "UR";
+    private static final String PREVIOUS_VERTICAL_KEY = "PV";
 
     private final String _id;
     private final HashMap<String, Node> _childs;
@@ -74,6 +75,10 @@ public class Node {
     public boolean analyzeDiagonalUpperRight(int sequenceLength) {
         return analyzeChilds(DIAGONAL_UPPER_RIGHT_KEY, sequenceLength);
     }
+    
+    public boolean analyzePreviousVertical(int sequenceLength) {
+        return analyzeChilds(PREVIOUS_VERTICAL_KEY, sequenceLength);
+    }
 
     public void addDiagonalUpperLeft(final Node node) {
         _childs.put(DIAGONAL_UPPER_LEFT_KEY, node);
@@ -101,6 +106,10 @@ public class Node {
     
     public void addDiagonalUpperRight(final Node node) {
         _childs.put(DIAGONAL_UPPER_RIGHT_KEY, node);
+    }
+    
+    public void addPreviousVertical(final Node node) {
+        _childs.put(PREVIOUS_VERTICAL_KEY, node);
     }
 
 }
