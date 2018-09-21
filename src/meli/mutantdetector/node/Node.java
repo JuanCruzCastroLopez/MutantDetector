@@ -10,6 +10,7 @@ public class Node {
     private static final String UPPER_LEFT_KEY = "UL";
     private static final String PREVIOUS_HORIZONTAL_KEY = "PH";
     private static final String LOWER_LEFT_KEY = "LL";
+    private static final String POSTERIOR_VERTICAL_KEY = "PV";
 
     private final String _id;
     private final HashMap<String, Node> _childs;
@@ -28,49 +29,35 @@ public class Node {
         return nodeID.equals(_id);
     }
 
-    public boolean analyzeDiagonalUpperLeft(int sequenceLength) {
+    private boolean analyzeChilds(final String childKey, int sequenceLength) {
         if (sequenceLength == MAX_SEQ_LENGTH) {
             return true;
         }
-        if (!_childs.containsKey(UPPER_LEFT_KEY)) {
+        if (!_childs.containsKey(childKey)) {
             return false;
         }
-        final Node child = _childs.get(UPPER_LEFT_KEY);
+        final Node child = _childs.get(childKey);
         if (!child.equals(this)) {
             return false;
         }
         sequenceLength++;
-        return child.analyzeDiagonalUpperLeft(sequenceLength);
+        return child.analyzeChilds(childKey, sequenceLength);
+    }
+
+    public boolean analyzeDiagonalUpperLeft(int sequenceLength) {
+        return analyzeChilds(UPPER_LEFT_KEY, sequenceLength);
     }
 
     public boolean analyzePreviousHorizontal(int sequenceLength) {
-        if (sequenceLength == MAX_SEQ_LENGTH) {
-            return true;
-        }
-        if (!_childs.containsKey(PREVIOUS_HORIZONTAL_KEY)) {
-            return false;
-        }
-        final Node child = _childs.get(PREVIOUS_HORIZONTAL_KEY);
-        if (!child.equals(this)) {
-            return false;
-        }
-        sequenceLength++;
-        return child.analyzePreviousHorizontal(sequenceLength);
+        return analyzeChilds(PREVIOUS_HORIZONTAL_KEY, sequenceLength);
     }
 
     public boolean analyzeDiagonalLowerLeft(int sequenceLength) {
-        if (sequenceLength == MAX_SEQ_LENGTH) {
-            return true;
-        }
-        if (!_childs.containsKey(LOWER_LEFT_KEY)) {
-            return false;
-        }
-        final Node child = _childs.get(LOWER_LEFT_KEY);
-        if (!child.equals(this)) {
-            return false;
-        }
-        sequenceLength++;
-        return child.analyzeDiagonalLowerLeft(sequenceLength);
+        return analyzeChilds(LOWER_LEFT_KEY, sequenceLength);
+    }
+
+    public boolean analyzePosteriorVertical(int sequenceLength) {
+        return analyzeChilds(POSTERIOR_VERTICAL_KEY, sequenceLength);
     }
 
     public void addUpperLeft(final Node node) {
@@ -83,6 +70,10 @@ public class Node {
 
     public void addDiagonalLowerLeft(final Node node) {
         _childs.put(LOWER_LEFT_KEY, node);
+    }
+
+    public void addPosteriorVertical(final Node node) {
+        _childs.put(POSTERIOR_VERTICAL_KEY, node);
     }
 
 }

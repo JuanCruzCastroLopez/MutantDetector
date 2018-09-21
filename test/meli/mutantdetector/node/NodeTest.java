@@ -120,6 +120,44 @@ public class NodeTest {
         Assert.assertTrue(result);
     }
     
+    @Test
+    public void test_analyzePosteriorVertical_returnFalse_whenNodeIdIsLetterAandHisChildIdIsLetterT() {
+        final Node nodeA = new Node("A");
+        final Node nodeT = new Node("T");
+
+        nodeA.addPosteriorVertical(nodeT);
+
+        final boolean result = nodeA.analyzePosteriorVertical(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzePosteriorVertical_returnFalse_whenNodeDoesNotHaveChilds() {
+        final Node nodeA = new Node("A");
+
+        final boolean result = nodeA.analyzePosteriorVertical(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzePosteriorVertical_returnTrue_whenNodeHasThreeChildsWithTheSameLetter() {
+        final Node nodeA = new Node("A");
+
+        final Node node1 = new Node("A");
+        final Node node2 = new Node("A");
+        final Node node3 = new Node("A");
+
+        node2.addPosteriorVertical(node3);
+        node1.addPosteriorVertical(node2);
+        nodeA.addPosteriorVertical(node1);
+
+        final boolean result = nodeA.analyzePosteriorVertical(1);
+
+        Assert.assertTrue(result);
+    }
+    
 
 
 }
