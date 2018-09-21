@@ -81,6 +81,45 @@ public class NodeTest {
         Assert.assertTrue(result);
     }
     
+    
+    @Test
+    public void test_analyzeDiagonalLowerLeft_returnFalse_whenNodeIdIsLetterAandHisChildIdIsLetterT() {
+        final Node nodeA = new Node("A");
+        final Node nodeT = new Node("T");
+
+        nodeA.addDiagonalLowerLeft(nodeT);
+
+        final boolean result = nodeA.analyzeDiagonalLowerLeft(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzeDiagonalLowerLeft_returnFalse_whenNodeDoesNotHaveChilds() {
+        final Node nodeA = new Node("A");
+
+        final boolean result = nodeA.analyzeDiagonalLowerLeft(1);
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void test_analyzeDiagonalLowerLeft_returnTrue_whenNodeHasThreeChildsWithTheSameLetter() {
+        final Node nodeA = new Node("A");
+
+        final Node node1 = new Node("A");
+        final Node node2 = new Node("A");
+        final Node node3 = new Node("A");
+
+        node2.addDiagonalLowerLeft(node3);
+        node1.addDiagonalLowerLeft(node2);
+        nodeA.addDiagonalLowerLeft(node1);
+
+        final boolean result = nodeA.analyzeDiagonalLowerLeft(1);
+
+        Assert.assertTrue(result);
+    }
+    
 
 
 }

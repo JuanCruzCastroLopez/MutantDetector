@@ -9,6 +9,7 @@ public class Node {
 
     private static final String UPPER_LEFT_KEY = "UL";
     private static final String PREVIOUS_HORIZONTAL_KEY = "PH";
+    private static final String LOWER_LEFT_KEY = "LL";
 
     private final String _id;
     private final HashMap<String, Node> _childs;
@@ -57,12 +58,31 @@ public class Node {
         return child.analyzePreviousHorizontal(sequenceLength);
     }
 
+    public boolean analyzeDiagonalLowerLeft(int sequenceLength) {
+        if (sequenceLength == MAX_SEQ_LENGTH) {
+            return true;
+        }
+        if (!_childs.containsKey(LOWER_LEFT_KEY)) {
+            return false;
+        }
+        final Node child = _childs.get(LOWER_LEFT_KEY);
+        if (!child.equals(this)) {
+            return false;
+        }
+        sequenceLength++;
+        return child.analyzeDiagonalLowerLeft(sequenceLength);
+    }
+
     public void addUpperLeft(final Node node) {
         _childs.put(UPPER_LEFT_KEY, node);
     }
-    
-        public void addPreviousHorizontal(final Node node) {
+
+    public void addPreviousHorizontal(final Node node) {
         _childs.put(PREVIOUS_HORIZONTAL_KEY, node);
+    }
+
+    public void addDiagonalLowerLeft(final Node node) {
+        _childs.put(LOWER_LEFT_KEY, node);
     }
 
 }
