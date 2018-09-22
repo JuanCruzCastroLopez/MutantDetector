@@ -1,4 +1,4 @@
-/* AMCO @ 2018 */
+
 package meli.mutantdetector.node;
 
 import java.util.HashMap;
