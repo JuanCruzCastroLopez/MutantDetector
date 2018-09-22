@@ -20,7 +20,7 @@ public class DnaSequence {
         return false;
     }
 
-    public void addNitrogenBase(NitrogenBase base) {
+    public void addNitrogenBase(final NitrogenBase base) {
         _sequence.add(base);
     }
 

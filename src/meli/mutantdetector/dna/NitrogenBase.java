@@ -7,7 +7,7 @@ public class NitrogenBase {
 
     private final Node _node;
     
-    public NitrogenBase(Node node) {
+    public NitrogenBase(final Node node) {
         _node = node;
     }
 
