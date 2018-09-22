@@ -49,35 +49,35 @@ public class Node {
     }
 
     public boolean analyzeDiagonalUpperLeft(int sequenceLength) {
-        return analyzeChilds(DIAGONAL_UPPER_LEFT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_UPPER_LEFT_KEY, 1);
     }
 
     public boolean analyzePreviousHorizontal(int sequenceLength) {
-        return analyzeChilds(PREVIOUS_HORIZONTAL_KEY, sequenceLength);
+        return analyzeChilds(PREVIOUS_HORIZONTAL_KEY, 1);
     }
 
     public boolean analyzeDiagonalLowerLeft(int sequenceLength) {
-        return analyzeChilds(DIAGONAL_LOWER_LEFT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_LOWER_LEFT_KEY, 1);
     }
 
     public boolean analyzePosteriorVertical(int sequenceLength) {
-        return analyzeChilds(POSTERIOR_VERTICAL_KEY, sequenceLength);
+        return analyzeChilds(POSTERIOR_VERTICAL_KEY, 1);
     }
     
     public boolean analyzeDiagonalLowerRight(int sequenceLength) {
-        return analyzeChilds(DIAGONAL_LOWER_RIGHT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_LOWER_RIGHT_KEY, 1);
     }
     
     public boolean analyzePosteriorHorizontal(int sequenceLength) {
-        return analyzeChilds(POSTERIOR_HORIZONTAL_KEY, sequenceLength);
+        return analyzeChilds(POSTERIOR_HORIZONTAL_KEY, 1);
     }
     
     public boolean analyzeDiagonalUpperRight(int sequenceLength) {
-        return analyzeChilds(DIAGONAL_UPPER_RIGHT_KEY, sequenceLength);
+        return analyzeChilds(DIAGONAL_UPPER_RIGHT_KEY, 1);
     }
     
     public boolean analyzePreviousVertical(int sequenceLength) {
-        return analyzeChilds(PREVIOUS_VERTICAL_KEY, sequenceLength);
+        return analyzeChilds(PREVIOUS_VERTICAL_KEY, 1);
     }
 
     public void addDiagonalUpperLeft(final Node node) {
