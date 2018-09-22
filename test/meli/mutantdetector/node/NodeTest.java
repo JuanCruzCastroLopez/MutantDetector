@@ -12,7 +12,7 @@ public class NodeTest {
 
         nodeA.addDiagonalUpperLeft(nodeT);
 
-        final boolean result = nodeA.analyzeDiagonalUpperLeft(1);
+        final boolean result = nodeA.analyzeDiagonalUpperLeft();
 
         Assert.assertFalse(result);
     }
@@ -21,7 +21,7 @@ public class NodeTest {
     public void test_analyzeDiagonalUpperLeft_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzeDiagonalUpperLeft(1);
+        final boolean result = nodeA.analyzeDiagonalUpperLeft();
 
         Assert.assertFalse(result);
     }
@@ -38,7 +38,7 @@ public class NodeTest {
         node1.addDiagonalUpperLeft(node2);
         nodeA.addDiagonalUpperLeft(node1);
 
-        final boolean result = nodeA.analyzeDiagonalUpperLeft(1);
+        final boolean result = nodeA.analyzeDiagonalUpperLeft();
 
         Assert.assertTrue(result);
     }
@@ -50,7 +50,7 @@ public class NodeTest {
 
         nodeA.addDiagonalUpperLeft(nodeT);
 
-        final boolean result = nodeA.analyzePreviousHorizontal(1);
+        final boolean result = nodeA.analyzePreviousHorizontal();
 
         Assert.assertFalse(result);
     }
@@ -59,7 +59,7 @@ public class NodeTest {
     public void test_analyzePreviousHorizontal_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzePreviousHorizontal(1);
+        final boolean result = nodeA.analyzePreviousHorizontal();
 
         Assert.assertFalse(result);
     }
@@ -76,7 +76,7 @@ public class NodeTest {
         node1.addPreviousHorizontal(node2);
         nodeA.addPreviousHorizontal(node1);
 
-        final boolean result = nodeA.analyzePreviousHorizontal(1);
+        final boolean result = nodeA.analyzePreviousHorizontal();
 
         Assert.assertTrue(result);
     }
@@ -89,7 +89,7 @@ public class NodeTest {
 
         nodeA.addDiagonalLowerLeft(nodeT);
 
-        final boolean result = nodeA.analyzeDiagonalLowerLeft(1);
+        final boolean result = nodeA.analyzeDiagonalLowerLeft();
 
         Assert.assertFalse(result);
     }
@@ -98,7 +98,7 @@ public class NodeTest {
     public void test_analyzeDiagonalLowerLeft_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzeDiagonalLowerLeft(1);
+        final boolean result = nodeA.analyzeDiagonalLowerLeft();
 
         Assert.assertFalse(result);
     }
@@ -115,7 +115,7 @@ public class NodeTest {
         node1.addDiagonalLowerLeft(node2);
         nodeA.addDiagonalLowerLeft(node1);
 
-        final boolean result = nodeA.analyzeDiagonalLowerLeft(1);
+        final boolean result = nodeA.analyzeDiagonalLowerLeft();
 
         Assert.assertTrue(result);
     }
@@ -127,7 +127,7 @@ public class NodeTest {
 
         nodeA.addPosteriorVertical(nodeT);
 
-        final boolean result = nodeA.analyzePosteriorVertical(1);
+        final boolean result = nodeA.analyzePosteriorVertical();
 
         Assert.assertFalse(result);
     }
@@ -136,7 +136,7 @@ public class NodeTest {
     public void test_analyzePosteriorVertical_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzePosteriorVertical(1);
+        final boolean result = nodeA.analyzePosteriorVertical();
 
         Assert.assertFalse(result);
     }
@@ -153,7 +153,7 @@ public class NodeTest {
         node1.addPosteriorVertical(node2);
         nodeA.addPosteriorVertical(node1);
 
-        final boolean result = nodeA.analyzePosteriorVertical(1);
+        final boolean result = nodeA.analyzePosteriorVertical();
 
         Assert.assertTrue(result);
     }
@@ -165,7 +165,7 @@ public class NodeTest {
 
         nodeA.addDiagonalLowerRight(nodeT);
 
-        final boolean result = nodeA.analyzeDiagonalLowerRight(1);
+        final boolean result = nodeA.analyzeDiagonalLowerRight();
 
         Assert.assertFalse(result);
     }
@@ -174,7 +174,7 @@ public class NodeTest {
     public void test_analyzeDiagonalLowerRigth_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzeDiagonalLowerRight(1);
+        final boolean result = nodeA.analyzeDiagonalLowerRight();
 
         Assert.assertFalse(result);
     }
@@ -191,7 +191,7 @@ public class NodeTest {
         node1.addDiagonalLowerRight(node2);
         nodeA.addDiagonalLowerRight(node1);
 
-        final boolean result = nodeA.analyzeDiagonalLowerRight(1);
+        final boolean result = nodeA.analyzeDiagonalLowerRight();
 
         Assert.assertTrue(result);
     }
@@ -203,7 +203,7 @@ public class NodeTest {
 
         nodeA.addPosteriorHorizontal(nodeT);
 
-        final boolean result = nodeA.analyzePosteriorHorizontal(1);
+        final boolean result = nodeA.analyzePosteriorHorizontal();
 
         Assert.assertFalse(result);
     }
@@ -212,7 +212,7 @@ public class NodeTest {
     public void test_analyzePosteriorHorizontal_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzePosteriorHorizontal(1);
+        final boolean result = nodeA.analyzePosteriorHorizontal();
 
         Assert.assertFalse(result);
     }
@@ -229,7 +229,7 @@ public class NodeTest {
         node1.addPosteriorHorizontal(node2);
         nodeA.addPosteriorHorizontal(node1);
 
-        final boolean result = nodeA.analyzePosteriorHorizontal(1);
+        final boolean result = nodeA.analyzePosteriorHorizontal();
 
         Assert.assertTrue(result);
     }
@@ -241,7 +241,7 @@ public class NodeTest {
 
         nodeA.addDiagonalUpperRight(nodeT);
 
-        final boolean result = nodeA.analyzeDiagonalUpperRight(1);
+        final boolean result = nodeA.analyzeDiagonalUpperRight();
 
         Assert.assertFalse(result);
     }
@@ -250,7 +250,7 @@ public class NodeTest {
     public void test_analyzeDiagonalPosteriorRight_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzeDiagonalUpperRight(1);
+        final boolean result = nodeA.analyzeDiagonalUpperRight();
 
         Assert.assertFalse(result);
     }
@@ -267,7 +267,7 @@ public class NodeTest {
         node1.addDiagonalUpperRight(node2);
         nodeA.addDiagonalUpperRight(node1);
 
-        final boolean result = nodeA.analyzeDiagonalUpperRight(1);
+        final boolean result = nodeA.analyzeDiagonalUpperRight();
 
         Assert.assertTrue(result);
     }
@@ -279,7 +279,7 @@ public class NodeTest {
 
         nodeA.addPreviousVertical(nodeT);
 
-        final boolean result = nodeA.analyzePreviousVertical(1);
+        final boolean result = nodeA.analyzePreviousVertical();
 
         Assert.assertFalse(result);
     }
@@ -288,7 +288,7 @@ public class NodeTest {
     public void test_analyzePreviousVertical_returnFalse_whenNodeDoesNotHaveChilds() {
         final Node nodeA = new Node("A");
 
-        final boolean result = nodeA.analyzePreviousVertical(1);
+        final boolean result = nodeA.analyzePreviousVertical();
 
         Assert.assertFalse(result);
     }
@@ -305,7 +305,7 @@ public class NodeTest {
         node1.addPreviousVertical(node2);
         nodeA.addPreviousVertical(node1);
 
-        final boolean result = nodeA.analyzePreviousVertical(1);
+        final boolean result = nodeA.analyzePreviousVertical();
 
         Assert.assertTrue(result);
     }

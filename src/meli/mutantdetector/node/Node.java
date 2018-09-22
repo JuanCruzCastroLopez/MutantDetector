@@ -48,35 +48,35 @@ public class Node {
         return child.analyzeChilds(childKey, sequenceLength);
     }
 
-    public boolean analyzeDiagonalUpperLeft(int sequenceLength) {
+    public boolean analyzeDiagonalUpperLeft() {
         return analyzeChilds(DIAGONAL_UPPER_LEFT_KEY, 1);
     }
 
-    public boolean analyzePreviousHorizontal(int sequenceLength) {
+    public boolean analyzePreviousHorizontal() {
         return analyzeChilds(PREVIOUS_HORIZONTAL_KEY, 1);
     }
 
-    public boolean analyzeDiagonalLowerLeft(int sequenceLength) {
+    public boolean analyzeDiagonalLowerLeft() {
         return analyzeChilds(DIAGONAL_LOWER_LEFT_KEY, 1);
     }
 
-    public boolean analyzePosteriorVertical(int sequenceLength) {
+    public boolean analyzePosteriorVertical() {
         return analyzeChilds(POSTERIOR_VERTICAL_KEY, 1);
     }
     
-    public boolean analyzeDiagonalLowerRight(int sequenceLength) {
+    public boolean analyzeDiagonalLowerRight() {
         return analyzeChilds(DIAGONAL_LOWER_RIGHT_KEY, 1);
     }
     
-    public boolean analyzePosteriorHorizontal(int sequenceLength) {
+    public boolean analyzePosteriorHorizontal() {
         return analyzeChilds(POSTERIOR_HORIZONTAL_KEY, 1);
     }
     
-    public boolean analyzeDiagonalUpperRight(int sequenceLength) {
+    public boolean analyzeDiagonalUpperRight() {
         return analyzeChilds(DIAGONAL_UPPER_RIGHT_KEY, 1);
     }
     
-    public boolean analyzePreviousVertical(int sequenceLength) {
+    public boolean analyzePreviousVertical() {
         return analyzeChilds(PREVIOUS_VERTICAL_KEY, 1);
     }
 
