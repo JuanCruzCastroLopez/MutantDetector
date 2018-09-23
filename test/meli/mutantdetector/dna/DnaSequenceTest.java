@@ -37,5 +37,23 @@ public class DnaSequenceTest {
 
         Assert.assertTrue(result);
     }
+    
+    @Test
+    public void testValidate_returnFalse_whenContainsNitrogenBaseWithInvalidId() {
+        final DnaSequence dnaSequence = new DnaSequence();
+
+        final Node node1 = new Node("A");
+        final NitrogenBase nb1 = new NitrogenBase(node1);
+        
+        final Node node2 = new Node("Z");
+        final NitrogenBase nb2 = new NitrogenBase(node2);
+
+        dnaSequence.addNitrogenBase(nb1);
+        dnaSequence.addNitrogenBase(nb2);
+
+        final boolean result = dnaSequence.validate();
+
+        Assert.assertFalse(result);
+    }
 
 }

@@ -24,4 +24,13 @@ public class DnaSequence {
         _sequence.add(base);
     }
 
+    public boolean validate() {
+        for (final NitrogenBase nitrogenBase : _sequence) {
+            if (!nitrogenBase.validate()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

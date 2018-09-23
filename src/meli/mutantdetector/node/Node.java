@@ -1,4 +1,3 @@
-
 package meli.mutantdetector.node;
 
 import java.util.HashMap;
@@ -33,6 +32,11 @@ public class Node implements INode {
     public boolean equals(final INode node) {
         final String nodeID = node.getID();
         return nodeID.equals(_id);
+    }
+
+    @Override
+    public boolean validateID(final String id) {
+        return _id.equals(id);
     }
 
     private boolean analyzeChilds(final String childKey, int sequenceLength) {
@@ -70,22 +74,22 @@ public class Node implements INode {
     public boolean analyzePosteriorVertical() {
         return analyzeChilds(POSTERIOR_VERTICAL_KEY, 1);
     }
-    
+
     @Override
     public boolean analyzeDiagonalLowerRight() {
         return analyzeChilds(DIAGONAL_LOWER_RIGHT_KEY, 1);
     }
-    
+
     @Override
     public boolean analyzePosteriorHorizontal() {
         return analyzeChilds(POSTERIOR_HORIZONTAL_KEY, 1);
     }
-    
+
     @Override
     public boolean analyzeDiagonalUpperRight() {
         return analyzeChilds(DIAGONAL_UPPER_RIGHT_KEY, 1);
     }
-    
+
     @Override
     public boolean analyzePreviousVertical() {
         return analyzeChilds(PREVIOUS_VERTICAL_KEY, 1);
@@ -106,19 +110,19 @@ public class Node implements INode {
     public void addPosteriorVertical(final INode node) {
         _childs.put(POSTERIOR_VERTICAL_KEY, node);
     }
-    
+
     public void addDiagonalLowerRight(final INode node) {
         _childs.put(DIAGONAL_LOWER_RIGHT_KEY, node);
     }
-    
+
     public void addPosteriorHorizontal(final INode node) {
         _childs.put(POSTERIOR_HORIZONTAL_KEY, node);
     }
-    
+
     public void addDiagonalUpperRight(final INode node) {
         _childs.put(DIAGONAL_UPPER_RIGHT_KEY, node);
     }
-    
+
     public void addPreviousVertical(final INode node) {
         _childs.put(PREVIOUS_VERTICAL_KEY, node);
     }

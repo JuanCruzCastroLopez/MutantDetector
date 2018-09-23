@@ -52,4 +52,9 @@ public class NullNode implements INode {
         return false;
     }
 
+    @Override
+    public boolean validateID(final String id) {
+        return true;
+    }
+
 }

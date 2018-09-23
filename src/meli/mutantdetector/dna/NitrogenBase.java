@@ -4,6 +4,11 @@ package meli.mutantdetector.dna;
 import meli.mutantdetector.node.INode;
 
 public class NitrogenBase {
+    
+    private static final String ADENINE = "A";
+    private static final String GUANINE = "G";
+    private static final String THYMINE = "T";
+    private static final String CYTOSINE = "C";
 
     private final INode _node;
     
@@ -37,6 +42,10 @@ public class NitrogenBase {
             return true;
         }
         return false;
+    }
+
+    public boolean validate() {
+        return _node.validateID(ADENINE) || _node.validateID(GUANINE) || _node.validateID(THYMINE) || _node.validateID(CYTOSINE);
     }
     
 

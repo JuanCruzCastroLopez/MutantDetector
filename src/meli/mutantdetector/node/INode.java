@@ -21,5 +21,7 @@ public interface INode {
     public boolean analyzeDiagonalUpperRight();
 
     public boolean analyzePreviousVertical();
+
+    public boolean validateID(String ADENINE);
     
 }
