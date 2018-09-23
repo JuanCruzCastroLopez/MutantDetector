@@ -1,13 +1,13 @@
 
 package meli.mutantdetector.dna;
 
-import meli.mutantdetector.node.Node;
+import meli.mutantdetector.node.INode;
 
 public class NitrogenBase {
 
-    private final Node _node;
+    private final INode _node;
     
-    public NitrogenBase(final Node node) {
+    public NitrogenBase(final INode node) {
         _node = node;
     }
 
