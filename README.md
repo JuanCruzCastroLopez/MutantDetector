@@ -15,3 +15,6 @@ Por otro lado, MutantDetector no es una aplicación standalone, sino que esta pe
 ## Links
   * Repositorio de Travis CI: https://travis-ci.org/JuanCruzCastroLopez/MutantDetector
   * Repositorio MutantDetectorAPI en github: https://github.com/JuanCruzCastroLopez/MutantDetectorAPI.git
+  
+## Diagramas
+En la carpeta *diagramas* se encuentran los diagramas que modelan la solución.
